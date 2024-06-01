@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400;0&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,14 +8,21 @@
     font-family: "Poppins", sans-serif;
 }
 
-header{
-    padding: 10px;
-    background-color: #556ee6;
-    display: flex;
-    justify-content: space-between;
+.ri{
+    font-size: 18px;
 }
 
-.menubar{
+header {
+    padding: 10px;
+    background-color: #556ee6;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menubar {
     height: 30px;
     width: 30px;
     display: flex;
@@ -27,7 +35,14 @@ header{
     cursor: pointer;
 }
 
-.admin-btn{
+.title{
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.admin-btn {
     padding: 5px;
     background-color: #778beb;
     border: 0;
@@ -37,6 +52,288 @@ header{
     cursor: pointer;
 }
 
-.admin-btn:focus, .menubar:focus{
+.admin-btn:focus, .menubar:focus {
     background-color: dodgerblue;
+}
+
+h2 {
+    padding: 8px;
+    text-align: center;
+}
+
+main {
+    overflow: auto;
+}
+
+/* table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* table header */
+.table-header th {
+    padding: 8px;
+    color: white;
+    background-color: black;
+    text-wrap: nowrap;
+}
+
+/* table value */
+.table-value .first-name-value, .middle-name-value, .last-name-value, .class-value, .session-value, .action-btn {
+    padding: 5px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.table-value .first-name-value, .middle-name-value, .last-name-value {
+    text-transform: capitalize;
+}
+
+.table-value .action-btn{
+    text-wrap: nowrap;
+}
+
+.table-value .action-btn button{
+    padding: 2px;
+    cursor: pointer;
+    background-color: #778beb;
+    border: 0;
+    border-radius: 3px;
+    color: white;
+}
+
+.table-value .action-btn button:hover{
+    background-color: #556ee6;
+}
+
+/* add form */
+.add-student-form{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none; /*comment this*/
+}
+
+form{
+    position: relative;
+    width: 300px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* form close button */
+form .form-close-btn{
+    padding: 3px;
+    background-color: dodgerblue;
+    border: 0;
+    border-radius: 3px;
+    position: absolute;
+    right: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+form .form-close-btn:hover {
+    background-color: red;
+}
+
+/* form user user image or icon */
+form .user-icon{
+    padding: 10px;
+    margin: auto;
+    background-color: #778beb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+form .user-icon .ri{
+    font-size: 70px;
+    color: white;
+}
+
+/* form datas */
+form .values{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form .values input[type=text]{
+    width: 100%;
+    padding: 6px;
+    outline: none;
+    font-size: 15px;
+    border: 0;
+    border-bottom: 2px solid #778beb;
+    text-transform: capitalize;
+}
+
+form .values input[type=text]:focus{
+    border-bottom: 2px solid #556ee6;
+}
+
+form .values input[type=text]:nth-child(4):invalid, input[type=text]:nth-child(5):invalid{
+    color: tomato;
+}
+
+form .values input[type=text]:nth-child(4):valid, input[type=text]:nth-child(5):valid{
+    color: black;
+}
+
+form .values textarea{
+    height: auto;
+    width: 100%;
+    padding: 6px;
+    outline: none;
+    font-size: 15px;
+    border: 0;
+    border-bottom: 2px solid #778beb;
+    resize: none;
+}
+
+form .values textarea:focus{
+    border-bottom: 2px solid #556ee6;
+}
+
+form .values textarea::-webkit-scrollbar{
+    display: none;
+}
+
+/* submit and reset button */
+form .sub-res-btn .submit, .reset{
+    padding: 8px;
+    background-color: #778beb;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+form .sub-res-btn .submit:focus, .reset:focus{
+    background-color: #556ee6;
+}
+
+/* student data view */
+.view-student-data{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none; /*comment this*/
+}
+
+.view-box{
+    width: 300px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.view-box .student-box{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.view-box .student-box .student-data{
+    width: 100%;
+    font-weight: 700;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.view-box .view-close-btn{
+    margin: auto;
+    width: 30%;
+    padding: 5px;
+    background-color: #778beb;
+    border: 0;
+    border-radius: 3px;
+    display: block;
+    color: white;
+    cursor: pointer;
+}
+
+.view-box .view-close-btn:hover{
+    background-color: #556ee6;
+}
+
+/* Add button */
+.add-btn{
+    height: 50px;
+    width: 50px;
+    background-color: #556ee6;
+    border: 0;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.add-btn:hover{
+    background-color: dodgerblue;
+}
+
+.add-btn .ri{
+    font-size: 25px;
+    font-weight: 900;
+    color: white;
+}
+
+/* media query */
+
+@media only screen and (max-height:395px){
+    form{
+        width: 90%;
+        height: 90%;
+        overflow: auto;
+    }
+
+    .view-box{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width:300px){
+    html::before{
+        content: 'Device pixel is to low';
+        position: absolute;
+    }
+
+    body{
+        display: none;
+    }
+}
+
+@media only screen and (max-height:165px){
+    html::before{
+        content: 'Device pixel is to low';
+        position: absolute;
+    }
+
+    body{
+        display: none;
+    }
 }
