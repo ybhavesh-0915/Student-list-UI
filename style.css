@@ -119,7 +119,7 @@ table {
     top: 0;
     left: 0;
     z-index: 2;
-    display: none; /*comment this*/
+    display: none;/*comment this line*/
 }
 
 form{
