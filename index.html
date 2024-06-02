@@ -48,12 +48,12 @@
             <button class="form-close-btn" type="button"><i class="ri ri-close-line"></i></button>
             <div class="user-icon"><i class="ri ri-user-line"></i></div>
             <div class="values">
-                <input type="text" placeholder="First Name" required>
-                <input type="text" placeholder="Middle Name" required>
-                <input type="text" placeholder="Last Name" required>
-                <input type="text" placeholder="Class" required pattern="[0-9]{2}[a-z]{2}" title="Pattern is like 12th">
+                <input type="text" placeholder="First Name" required pattern="[A-za-z]{3,}" title="first Name atleast 3 letters">
+                <input type="text" placeholder="Middle Name" required pattern="[A-za-z]{3,}" title="middle Name atleast 3 letters">
+                <input type="text" placeholder="Last Name" required pattern="[A-za-z]{3,}" title="last Name atleast 3 letters">
+                <input type="text" placeholder="Class" required pattern="[0-9]{1,}[a-z]{2}" title="Pattern is like 12th">
                 <input type="text" placeholder="Session" required pattern="[0-9]{4}-[0-9]{2}" title="Pattern is like 2022-23">
-                <textarea placeholder="Address" rows="2"></textarea>
+                <textarea placeholder="Address" rows="2" required></textarea>
             </div>
             <div class="sub-res-btn">
                 <button type="submit" class="submit">Submit</button>
